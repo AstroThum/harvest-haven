@@ -3,6 +3,7 @@
 //  Engine : Phaser 3.80  |  All art generated programmatically
 //  Author : AI-assisted prototype — expand freely!
 // ================================================================
+console.log('game.js loaded');
 
 /* ────────────────────────────────────────────────────────────────
    §1  CONSTANTS & ENUMS
@@ -143,7 +144,10 @@ function generateTextures(scene) {
     g.fillCircle(12, 9, 7);
     // Hair
     g.fillStyle(0x6B3A2E);
-    g.fillArc(12, 8, 8, Phaser.Math.DegToRad(180), Phaser.Math.DegToRad(360), false);
+    g.beginPath();
+    g.arc(12, 8, 8, Phaser.Math.DegToRad(180), Phaser.Math.DegToRad(360), false);
+    g.closePath();
+    g.fillPath();
     g.fillRect(4, 5, 16, 4);
     // Eyes
     g.fillStyle(0x2C2C2C);
