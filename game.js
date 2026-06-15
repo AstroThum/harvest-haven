@@ -820,6 +820,7 @@ const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    // Ensure the container exists before attaching
     parent: 'game-container',
     pixelArt: true,
     backgroundColor: '#1a1a2e',
@@ -838,4 +839,10 @@ const config = {
 };
 
 // 🚀 Launch the game!
-const game = new Phaser.Game(config);
+let game;
+try {
+  game = new Phaser.Game(config);
+  console.log('Phaser Game instance created');
+} catch (e) {
+  console.error('Error creating Phaser Game:', e);
+}
